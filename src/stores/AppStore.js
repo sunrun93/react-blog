@@ -13,10 +13,10 @@ export default _.extend({}, EventEmitter.prototype, {
             { id: '2', name: 'second Line' },
             { id: '3', name: 'third Line' }
         ],
-        section: [
-            { id: '1', tag: 'section1', content: '111111111111111111111111111111111' },
-            { id: '2', tag: 'section2', content: '222222222222222222222222222222222' },
-            { id: '3', tag: 'section3', content: '333333333333333333333333333333333' }
+        article: [
+            { id: '1', tag: 'article1', content: '111111111111111111111111111111111' },
+            { id: '2', tag: 'article2', content: '222222222222222222222222222222222' },
+            { id: '3', tag: 'article3', content: '333333333333333333333333333333333' }
         ]
     },
 

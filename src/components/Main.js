@@ -15,14 +15,13 @@ export default class AppComponent extends Component {
         const data = AppStore.data;
         const headerData = data.header;
         const navData = data.nav;
-        const sectionData = data.section;
+        const sectionData = data.article;
         return (
             <div className = "index" >
               <Header data={headerData}/>
               <Nav data={navData}/>
               <Section data={sectionData}/>
               <Footer/>
-                
             </div>
         );
     }

@@ -10,11 +10,12 @@ render(){
     const data = this.props.data;
     const nav_items = data.map((item)=>{
         return(
-            <li key={item.id}> {item.name} </li>
+            <li className='navItem' key={item.id}> {item.name} </li>
         )
     })
     return(
         <div className="nav">
+            <span className="navIcon"></span>
             <ul>{nav_items}</ul>
         </div>
     )}
