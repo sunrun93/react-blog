@@ -6,7 +6,8 @@ export default _.extend({}, EventEmitter.prototype, {
     data: {
         header: {
             title: 'React-Blog',
-            desp: 'Try to build a blog with react'
+            desp: 'Try to build a blog with react',
+            navItems:['JavaScript','HTML','React','GoJS','ES6']
         },
         nav: [
             { id: '1', name: 'first Line' },

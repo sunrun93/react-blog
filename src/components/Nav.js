@@ -7,11 +7,11 @@ import {Route} from 'react-router';
 
 let Nav = React.createClass({
     handleClick:(index)=>{
-        alert(index);
+        
     },
     render:function(){
     const data = this.props.data;
-    const nav_items = data.map((item,index)=>{
+    const navItems = data.map((item,index)=>{
         return(
             <li className='navItem' onClick={this.handleClick(index)} key={item.id}> {item.name} </li>
         )
@@ -19,7 +19,7 @@ let Nav = React.createClass({
     return(
         <div className="nav">
             <span className="navIcon"></span>
-            <ul>{nav_items}</ul>
+            <ul>{navItems}</ul>
         </div>
     )}
     
