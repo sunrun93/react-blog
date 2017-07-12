@@ -9,7 +9,7 @@ let Nav = React.createClass({
     handleClick:(index)=>{
         alert(index);
     },
-    render:()=>{
+    render:function(){
     const data = this.props.data;
     const nav_items = data.map((item,index)=>{
         return(
