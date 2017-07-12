@@ -14,6 +14,31 @@ body {
         color: #333;
         position: absolute;
         top: 0;
+        .header_title {
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            margin-bottom: 10px;
+        }
+        .header_desp {
+            display: inline-block;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            margin-bottom: 0;
+        }
+        .nav_bar{
+            list-style: none;
+            position: absolute;
+            right: 150px;
+            bottom: 0;
+            .nav_bar_item{
+                display: inline;
+                padding:10px 20px;
+                background-color: #fff;
+                margin: 0 10px;
+            }
+        }
     }
     .contentPane {
         display: inline-block;
@@ -21,26 +46,26 @@ body {
         position: absolute;
         top: 100px;
     }
-    @border:1px solid #000;
+    @border: 1px solid #000;
     .nav {
         .contentPane;
         width: 16%;
         left: 0;
         background: #fff;
-        color:#333;
-        .navIcon{
-          background: url('./../images/icons/category.svg');
-          background-size: 40px 40px;
-          width:40px;
-          height:40px;
-          display:block;
+        color: #333;
+        .navIcon {
+            background: url('./../images/icons/category.svg');
+            background-size: 40px 40px;
+            width: 40px;
+            height: 40px;
+            display: block;
         }
-        .navItem{
-          list-style: none;
-          line-height: 30px;
-          background: url('./../images/icons/item.svg') no-repeat;
-          background-size: 30px 30px;
-          padding-left: 30px;
+        .navItem {
+            list-style: none;
+            line-height: 30px;
+            background: url('./../images/icons/item.svg') no-repeat;
+            background-size: 30px 30px;
+            padding-left: 30px;
         }
     }
     .section {

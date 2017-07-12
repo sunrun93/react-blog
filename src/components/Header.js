@@ -10,11 +10,11 @@ let NavBar = React.createClass({
         const data=this.props.data;
         const navBarItems=data.map((item)=>{
             return(
-                <li className="navBarItem">{item}</li>
+                <li className="nav_bar_item">{item}</li>
             )
         });
         return(
-            <ul className="navBar">
+            <ul className="nav_bar">
                 <li>{navBarItems}</li>
             </ul>
         )
@@ -26,8 +26,8 @@ render(){
     const data = this.props.data;
     return(
         <div className="header">
-            <h1>{data.title}</h1>
-            <h4>{data.desp}</h4>
+            <h1 className="header_title">{data.title}</h1>
+            <h4 className="header_desp">{data.desp}</h4>
             <NavBar data={data.navItems}/>
         </div>
     )}
