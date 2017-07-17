@@ -6,8 +6,8 @@ import {render} from 'react-dom';
 import {Route} from 'react-router';
 
 let Nav = React.createClass({
-    handleClick:(index)=>{
-        
+    handleClick: function(){
+        this.props.navTo;
     },
     render:function(){
     const data = this.props.data;

@@ -6,11 +6,12 @@ import {render} from 'react-dom';
 import {Route} from 'react-router';
 
 export default class Section extends Component{
-render(){
+   
+    render(){
     const data = this.props.data;
     const section_item = data.map((item)=>{
         return(
-            <div>
+            <div key={item.id}>
                 <h3 key={item.id}>{item.tag}</h3>
                 <section>{item.content}</section>
             </div>

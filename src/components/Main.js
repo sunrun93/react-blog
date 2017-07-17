@@ -10,7 +10,12 @@ import Footer from './Footer'
 
 import AppStore from '../stores/AppStore'
 
+let navToFun = function(){
+    //alert('aaaaa');
+}
+
 export default class AppComponent extends Component {
+
     render() {
         const data = AppStore.data;
         const headerData = data.header;
@@ -19,7 +24,7 @@ export default class AppComponent extends Component {
         return (
             <div className = "index" >
               <Header data={headerData}/>
-              <Nav data={navData}/>
+              <Nav data={navData} navTo={navToFun()}/>
               <Section data={sectionData}/>
               <Footer/>
             </div>

@@ -10,13 +10,11 @@ let NavBar = React.createClass({
         const data=this.props.data;
         const navBarItems=data.map((item)=>{
             return(
-                <li className="nav_bar_item">{item}</li>
+                <li className="nav_bar_item" key={item}>{item}</li>
             )
         });
         return(
-            <ul className="nav_bar">
-                <li>{navBarItems}</li>
-            </ul>
+            <ul className="nav_bar">{navBarItems}</ul>
         )
     }
 });
