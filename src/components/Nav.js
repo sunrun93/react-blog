@@ -6,16 +6,17 @@ import {render} from 'react-dom';
 import {Route} from 'react-router';
 
 let Nav = React.createClass({
-    handleClick: function(){
-        this.props.navTo;
+    handleClick: function(event){
+        console.log(event.target);
+        console.log(this.props);
     },
-    render:function(){
-    const data = this.props.data;
-    const navItems = data.map((item,index)=>{
-        return(
-            <li className='navItem' onClick={this.handleClick(index)} key={item.id}> {item.name} </li>
-        )
-    })
+    render: function () {
+        const data = this.props.data;
+        const navItems = data.map((item, index) => {
+            return (
+                <li className='navItem' onClick={this.handleClick} key={item.id}>{item.name}</li>
+            )
+        })
     return(
         <div className="nav">
             <span className="navIcon"></span>

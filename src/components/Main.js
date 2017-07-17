@@ -11,7 +11,7 @@ import Footer from './Footer'
 import AppStore from '../stores/AppStore'
 
 let navToFun = function(){
-    //alert('aaaaa');
+   console.log('aaaaaa');
 }
 
 export default class AppComponent extends Component {
