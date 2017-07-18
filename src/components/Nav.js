@@ -8,7 +8,7 @@ import {Route} from 'react-router';
 let Nav = React.createClass({
     handleClick: function(event){
         console.log(event.target);
-        console.log(this.props);
+        this.props.navTo;
     },
     render: function () {
         const data = this.props.data;
