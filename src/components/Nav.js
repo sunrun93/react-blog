@@ -4,7 +4,9 @@ require('styles/App.less');
 import React,{ Component } from 'react';
 import {render} from 'react-dom';
 import {Route} from 'react-router';
+import AppStore from '../stores/AppStore'
 
+const navData = AppStore.data;
 let Nav = React.createClass({
     handleClick: function(event){
         console.log(event.target);
@@ -12,11 +14,12 @@ let Nav = React.createClass({
         this.setState({bgColor:this.state.bgColor ==='pink'?'green':'pink'});
     },
     getInitialState:function(){
-        return {bgColor:'pink'}
+        //初始化取值可以通过intialData取值
+        return {bgColor:'pink',navItem:navData.nav}
     },
     render: function () {
-        const data = this.props.data;
-        const navItems = data.map(function(item, index){
+       // const data = this.props.data;
+        const navItems = this.state.navItem.map(function(item, index){
             return (
                 <li className='navItem' onClick={this.handleClick} style={{backgroundColor:this.state.bgColor}} key={item.id}>{item.name}</li>
             )
