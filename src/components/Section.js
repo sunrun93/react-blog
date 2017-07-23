@@ -6,7 +6,9 @@ import {render} from 'react-dom';
 import {Route} from 'react-router';
 
 export default class Section extends Component{
-   
+    getInitialState = function(){
+        this.setState(this.props.targetIndex);
+    }
     render(){
     const data = this.props.data;
     const section_item = data.map((item)=>{

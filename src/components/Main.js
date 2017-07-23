@@ -10,14 +10,18 @@ import Footer from './Footer'
 
 import AppStore from '../stores/AppStore'
 
+let AppComponent = React.createClass({
+     navToFun: function (a) {
+        console.log(a);
+        this.setState({articleIndex: a});
 
-let navToFun = function (a) {
-    console.log(a);
-}
-
-export default class AppComponent extends Component {
-
-    render() {
+    },
+     getInitialState:function(){
+        return {
+            articleIndex: 1
+        }
+    },
+    render:function() {
         const data = AppStore.data;
         const headerData = data.header;
         const navData = data.nav;
@@ -25,10 +29,13 @@ export default class AppComponent extends Component {
         return (
             <div className = "index" >
               <Header data={headerData}/>
-              <Nav navTo={navToFun} data={navData}/>
-              <Section data={sectionData}/>
+              <Nav navTo={this.navToFun.bind(this)} data={navData}/>
+              <Section data={sectionData} targetIndex={this.state.articleIndex}/>
               <Footer/>
             </div>
         );
     }
-}
+
+})
+
+export default AppComponent;
