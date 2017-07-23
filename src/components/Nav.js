@@ -8,22 +8,22 @@ import AppStore from '../stores/AppStore'
 
 const navData = AppStore.data;
 let Nav = React.createClass({
-    handleClick: function(event){
-        console.log(event.target);
-        this.props.navTo();
-        this.setState({bgColor:this.state.bgColor ==='pink'?'green':'pink'});
+    handleClick: function(i){
+        //console.log('You clicked: ' + this.props.data[i].id);
+        this.props.navTo(this.props.data[i].id);
+        this.setState({bgColor:this.state.bgColor ==='blue'?'green':'blue'});
     },
     getInitialState:function(){
-        //初始化取值可以通过intialData取值
-        return {bgColor:'pink',navItem:navData.nav}
+        //初始化取值也可以通过intialData取值
+        return {bgColor:'blue'}
     },
     render: function () {
-       // const data = this.props.data;
-        const navItems = this.state.navItem.map(function(item, index){
+        const data = this.props.data;
+        const navItems = data.map(function(item,i){
             return (
-                <li className='navItem' onClick={this.handleClick} style={{backgroundColor:this.state.bgColor}} key={item.id}>{item.name}</li>
+                <li className='navItem' onClick={this.handleClick.bind(this,i)} style={{color:this.state.bgColor}} key={i}>{item.name}</li>
             )
-        }.bind(this))
+        },this)
     return(
         <div className="nav">
             <span className="navIcon"></span>
