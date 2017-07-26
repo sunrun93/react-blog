@@ -12,7 +12,6 @@ import AppStore from '../stores/AppStore'
 
 let AppComponent = React.createClass({
      navToFun: function (a) {
-        console.log(a);
         this.setState({articleIndex: a});
 
     },
@@ -29,7 +28,7 @@ let AppComponent = React.createClass({
         return (
             <div className = "index" >
               <Header data={headerData}/>
-              <Nav navTo={this.navToFun.bind(this)} data={navData}/>
+              <Nav navTo={this.navToFun} data={navData}/>
               <Section data={sectionData} targetIndex={this.state.articleIndex}/>
               <Footer/>
             </div>

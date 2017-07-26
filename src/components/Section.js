@@ -6,7 +6,9 @@ import {render} from 'react-dom';
 import {Route} from 'react-router';
 
 let Section = React.createClass({
-
+    getInitialState:function(){
+        return {articleIndex:this.props.targetIndex}
+    },
     render:function(){
     const data = this.props.data;
     const section_item = data.map((item)=>{
