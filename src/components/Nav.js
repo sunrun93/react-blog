@@ -4,12 +4,12 @@ require('styles/App.less');
 import React,{ Component } from 'react';
 import {render} from 'react-dom';
 import {Route} from 'react-router';
-import AppStore from '../stores/AppStore'
+import AppStore from '../stores/AppStore';
+let articleData = require('../stores/article.json');
 
-const navData = AppStore.data;
+const navData = articleData;
 let Nav = React.createClass({
     handleClick: function(i){
-        //console.log('You clicked: ' + this.props.data[i].id);
         this.props.navTo(this.props.data[i].id);
         this.setState({bgColor:this.state.bgColor ==='blue'?'green':'blue'});
     },

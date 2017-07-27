@@ -4,19 +4,20 @@ require('styles/App.less');
 import React,{ Component } from 'react';
 import {render} from 'react-dom';
 import {Route} from 'react-router';
+let articleData = require('../stores/article.json');
 
 let Section = React.createClass({
     getInitialState:function(){
         return {articleIndex:this.props.targetIndex}
     },
     render:function(){
-    const data = this.props.data;
-    const currentArticle = data[this.props.targetIndex-1];
+    const currentArticle = articleData[this.props.targetIndex-1];
   
     const section_item = ()=>{
         return(
             <div>
-                <h3 key={currentArticle.id}>{currentArticle.tag}</h3>
+                <h3 key={currentArticle.index}>{currentArticle.title}</h3>
+                <h6>{currentArticle.tag}</h6>
                 <section>{currentArticle.content}</section>
             </div>
         )

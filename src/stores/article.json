@@ -1,0 +1,13 @@
+[{
+    "title":"JS原型与原型链终极详解",
+    "tag":"Javascript基础",
+    "content":"JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Object ，Function 是JS自带的函数对象。下面举例说明"
+},{
+    "title":"javascript深入理解js闭包",
+    "tag":"Javascript基础",
+    "content":"一、变量的作用域:要理解闭包:首先必须理解Javascript特殊的变量作用域。变量的作用域无非就是两种：全局变量和局部变量Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。"
+},{
+    "title":"关于js里的this关键字的理解",
+    "tag":"Javascript基础",
+    "content":"this关键字相信大家都非常熟悉，js中提供的this关键在要比oo语言中混乱，下面通过本文给大家介绍js里this关键字的理解，需要的朋友可以参考下"
+}]
