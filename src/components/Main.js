@@ -13,7 +13,6 @@ import AppStore from '../stores/AppStore'
 let AppComponent = React.createClass({
      navToFun: function (a) {
         this.setState({articleIndex: a});
-
     },
      getInitialState:function(){
         return {
