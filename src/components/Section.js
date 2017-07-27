@@ -11,7 +11,7 @@ let Section = React.createClass({
         return {articleIndex:this.props.targetIndex}
     },
     render:function(){
-    const currentArticle = articleData[this.props.targetIndex-1];
+    const currentArticle = articleData[this.props.targetIndex];
   
     const section_item = ()=>{
         return(

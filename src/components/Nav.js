@@ -10,18 +10,13 @@ let articleData = require('../stores/article.json');
 const navData = articleData;
 let Nav = React.createClass({
     handleClick: function(i){
-        this.props.navTo(this.props.data[i].id);
-        this.setState({bgColor:this.state.bgColor ==='blue'?'green':'blue'});
+        this.props.navTo(i);
     },
-    getInitialState:function(){
-        //初始化取值也可以通过intialData取值
-        return {bgColor:'blue'}
-    },
+   
     render: function () {
-        const data = this.props.data;
-        const navItems = data.map(function(item,i){
+        const navItems = navData.map(function(item,i){
             return (
-                <li className='navItem' onClick={this.handleClick.bind(this,i)} style={{color:this.state.bgColor}} key={i}>{item.name}</li>
+                <li className='navItem' onClick={this.handleClick.bind(this,i)} key={i}>{item.title}</li>
             )
         },this)
     return(

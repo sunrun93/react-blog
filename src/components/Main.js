@@ -22,13 +22,11 @@ let AppComponent = React.createClass({
     render:function() {
         const data = AppStore.data;
         const headerData = data.header;
-        const navData = data.nav;
-        const sectionData = data.article;
         return (
             <div className = "index" >
               <Header data={headerData}/>
-              <Nav navTo={this.navToFun} data={navData}/>
-              <Section data={sectionData} targetIndex={this.state.articleIndex}/>
+              <Nav navTo={this.navToFun}/>
+              <Section targetIndex={this.state.articleIndex}/>
               <Footer/>
             </div>
         );
