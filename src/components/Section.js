@@ -11,11 +11,11 @@ let Section = React.createClass({
     },
     render:function(){
     const data = this.props.data;
-    const currentArticle = data[this.props.targetIndex];
+    const currentArticle = data[this.props.targetIndex-1];
   
     const section_item = ()=>{
         return(
-            <div >
+            <div>
                 <h3 key={currentArticle.id}>{currentArticle.tag}</h3>
                 <section>{currentArticle.content}</section>
             </div>
