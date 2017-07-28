@@ -4,14 +4,14 @@ require('styles/App.less');
 import React,{ Component } from 'react';
 import {render} from 'react-dom';
 import {Route} from 'react-router';
-let articleData = require('../stores/article.json');
+let jsData = require('../stores/javascript.json');
 
 let Section = React.createClass({
     getInitialState:function(){
         return {articleIndex:this.props.targetIndex}
     },
     render:function(){
-    const currentArticle = articleData[this.props.targetIndex];
+    const currentArticle = jsData[this.props.targetIndex];
   
     const section_item = ()=>{
         return(

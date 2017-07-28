@@ -1,7 +1,7 @@
 require('normalize.css/normalize.css');
 require('styles/App.less');
 
-import React,{Component} from 'react';
+import React from 'react';
 
 import Header from './Header'
 import Nav from './Nav'

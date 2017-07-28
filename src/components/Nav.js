@@ -5,24 +5,33 @@ import React,{ Component } from 'react';
 import {render} from 'react-dom';
 import {Route} from 'react-router';
 import AppStore from '../stores/AppStore';
-let articleData = require('../stores/article.json');
+let jsData = require('../stores/javascript.json');
+let htmlData = require('../stores/html.json');
 
-const navData = articleData;
+
 let Nav = React.createClass({
     handleClick: function(i){
         this.props.navTo(i);
     },
    
     render: function () {
-        const navItems = navData.map(function(item,i){
+        const jsNavItems = jsData.map(function(item,i){
             return (
                 <li className='navItem' onClick={this.handleClick.bind(this,i)} key={i}>{item.title}</li>
+            )
+        },this);
+        const htmlNavItems = htmlData.map(function(item,i){
+            return (
+                <li className='navItem' key={i}>{item.title}</li>
             )
         },this)
     return(
         <div className="nav">
             <span className="navIcon"></span>
-            <ul>{navItems}</ul>
+            <span>javascript基础</span>
+            <ul>{jsNavItems}</ul>
+            <span>HTML简介</span>
+            <ul>{htmlNavItems}</ul>
         </div>
     )}
     
