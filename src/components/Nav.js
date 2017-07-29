@@ -5,16 +5,12 @@ import React,{ Component } from 'react';
 import {render} from 'react-dom';
 import {Route} from 'react-router';
 import AppStore from '../stores/AppStore';
-let jsData = require('../stores/javascript.json');
-let htmlData = require('../stores/html.json');
-let reactData = require('../stores/react.json');
-let gojsData = require('../stores/gojs.json');
-let es6Data = require('../stores/ES6.json');
-let totalData = jsData.concat(htmlData, reactData, gojsData, es6Data);
+
+let data = AppStore.data.totalData;
 
 function mapTag() {
     let totalTag = [];
-    totalData.forEach((item) => {
+    data.forEach((item) => {
         if (totalTag.indexOf(item.tag) === -1) {
             totalTag.push(item.tag);
         }
@@ -27,8 +23,8 @@ let NavItem = React.createClass({
         this.props.targetItem(title);
     },
     render: function () {
-        let detail = totalData.filter((item)=>{return item.tag === this.props.tagID})
-        const navItem = detail.map(function (item,i) {
+        let detail = data.filter((item)=>{return item.tag === this.props.tagID})
+        const navItem = detail.map(function (item) {
             return(
                 <li className='navItem' key={item.title} onClick={this.handleClick.bind(this, item.title)}>{item.title}</li>
             )

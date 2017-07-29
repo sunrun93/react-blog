@@ -5,12 +5,9 @@ import React,{ Component } from 'react';
 import {render} from 'react-dom';
 import {Route} from 'react-router';
 
-let jsData = require('../stores/javascript.json');
-let htmlData = require('../stores/html.json');
-let reactData = require('../stores/react.json');
-let gojsData = require('../stores/gojs.json');
-let es6Data = require('../stores/ES6.json');
-let totalData = jsData.concat(htmlData, reactData, gojsData, es6Data);
+import AppStore from '../stores/AppStore';
+
+let data = AppStore.data.totalData;
 
 
 let Section = React.createClass({
@@ -18,7 +15,7 @@ let Section = React.createClass({
         return {articleIndex:this.props.targetIndex}
     },
     render:function(){
-    const currentArticle = totalData.filter((item)=>{return item.title ===this.props.targetIndex})[0];
+    const currentArticle = data.filter((item)=>{return item.title ===this.props.targetIndex})[0];
   
     const section_item = ()=>{
         return(
