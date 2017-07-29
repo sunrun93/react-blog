@@ -23,12 +23,12 @@ let NavItem = React.createClass({
         this.props.targetItem(title);
     },
     render: function () {
-        let detail = data.filter((item)=>{return item.tag === this.props.tagID})
+        let detail = data.filter((item)=>{return item.tag === this.props.tagID});//filter nav item through tagID
         const navItem = detail.map(function (item) {
             return(
-                <li className='navItem' key={item.title} onClick={this.handleClick.bind(this, item.title)}>{item.title}</li>
+                <li className='navItem' key={item.title} onClick={this.handleClick.bind(this, item.title)} style={{display:this.props.showItem?'block':'none'}}>{item.title}</li>
             )
-        },this)
+        },this);
         return (
             <ul>{navItem}</ul>
         )
@@ -36,20 +36,29 @@ let NavItem = React.createClass({
 
 });
 let Nav = React.createClass({
-    navToItem:function(i){
-        this.props.navTo(i)
+    navToItem:function(title){
+        this.props.navTo(title);//main function set state to update section
+        
+    },
+    handleClick:function(index){
+        this.setState({showItem:this.state.showItem==true?false:true})
+    },
+    getInitialState:function(){
+        return {showItem:true}
     },
 
     render: function () {
-        const tags = mapTag().map(function (item) {
+        const tags = mapTag().map(function (item,index) {
             return (
-                <div key={item}>{item}<NavItem targetItem={this.navToItem} tagID={item}/></div>
+                <div key={item} className="navTagPane">
+                    <span onClick={(index)=>{this.handleClick(index)}}>{item}</span>
+                    <NavItem showItem={this.state.showItem} targetItem={this.navToItem} tagID={item} />
+                </div>
             );
         },this);
     return(
         <div className="nav">
-            <span className="navIcon"></span>
-            <div>{tags}</div>
+            <div className="navPane">{tags}</div>
         </div>
     )}
     
