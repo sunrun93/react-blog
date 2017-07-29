@@ -17,12 +17,12 @@ let Nav = React.createClass({
     render: function () {
         const jsNavItems = jsData.map(function(item,i){
             return (
-                <li className='navItem' onClick={this.handleClick.bind(this,i)} key={i}>{item.title}</li>
+                <li className='navItem' onClick={this.handleClick.bind(this,item.title)} key={i}>{item.title}</li>
             )
         },this);
         const htmlNavItems = htmlData.map(function(item,i){
             return (
-                <li className='navItem' key={i}>{item.title}</li>
+                <li className='navItem' onClick={this.handleClick.bind(this,item.title)} key={i}>{item.title}</li>
             )
         },this)
     return(

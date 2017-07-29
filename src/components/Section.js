@@ -4,14 +4,18 @@ require('styles/App.less');
 import React,{ Component } from 'react';
 import {render} from 'react-dom';
 import {Route} from 'react-router';
+
 let jsData = require('../stores/javascript.json');
+let htmlData = require('../stores/html.json');
+
 
 let Section = React.createClass({
     getInitialState:function(){
         return {articleIndex:this.props.targetIndex}
     },
     render:function(){
-    const currentArticle = jsData[this.props.targetIndex];
+    const articleData = jsData.concat(htmlData);
+    const currentArticle = articleData.filter((item)=>{return item.title ===this.props.targetIndex})[0];
   
     const section_item = ()=>{
         return(

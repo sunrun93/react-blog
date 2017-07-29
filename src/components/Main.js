@@ -9,14 +9,15 @@ import Section from './Section'
 import Footer from './Footer'
 
 import AppStore from '../stores/AppStore'
+let jsData = require('../stores/javascript.json');
 
 let AppComponent = React.createClass({
      navToFun: function (a) {
-        this.setState({articleIndex: a});
+        this.setState({articleTitle: a});
     },
      getInitialState:function(){
         return {
-            articleIndex: 1
+            articleTitle: jsData[0].title
         }
     },
     render:function() {
@@ -26,7 +27,7 @@ let AppComponent = React.createClass({
             <div className = "index" >
               <Header data={headerData}/>
               <Nav navTo={this.navToFun}/>
-              <Section targetIndex={this.state.articleIndex}/>
+              <Section targetIndex={this.state.articleTitle}/>
               <Footer/>
             </div>
         );
