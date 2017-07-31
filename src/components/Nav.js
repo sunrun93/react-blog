@@ -39,13 +39,23 @@ let Nav = React.createClass({
     navToItem:function(title){
         this.props.navTo(title);//main function set state to update section
     },
+    handleClick:function(index,ev){
+        this.setState({
+                index : index
+            })
+    },
+    getInitialState:function(){
+        return {
+            index:0
+        }
+    },
 
     render: function () {
-        const tags = mapTag().map(function (item) {
+        const tags = mapTag().map(function (item,index) {
             return (
-                <div key={item} className="navTagPane">
-                    <span>{item}</span>
-                    <NavItem targetItem={this.navToItem} tagID={item} />
+                <div key={item} className="navTagPane" >
+                    <span onClick={this.handleClick.bind(null,index)}>{item}</span>
+                    <NavItem targetItem={this.navToItem} tagID={item} active={this.state.index==index} key={index}/>
                 </div>
             );
         },this);
