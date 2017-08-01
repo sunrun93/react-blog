@@ -26,7 +26,7 @@ let NavItem = React.createClass({
         let detail = data.filter((item)=>{return item.tag === this.props.tagID});//filter nav item through tagID
         const navItem = detail.map(function (item) {
             return(
-                <li className='navItem' key={item.title} onClick={this.handleClick.bind(this, item.title)}>{item.title}</li>
+                <li key={item.title} onClick={this.handleClick.bind(this, item.title)} className={'navItem'+(this.props.active ? 'Full' : 'Hidden')}>{item.title}</li>
             )
         },this);
         return (
