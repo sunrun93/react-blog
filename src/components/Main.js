@@ -26,8 +26,10 @@ let AppComponent = React.createClass({
         return (
             <div className = "index" >
               <Header data={headerData}/>
-              <Nav navTo={this.navToFun}/>
-              <Section targetIndex={this.state.articleTitle}/>
+              <div className="mainContent">
+                  <Nav navTo={this.navToFun} />
+                  <Section targetIndex={this.state.articleTitle} />
+              </div>
               <Footer/>
             </div>
         );
