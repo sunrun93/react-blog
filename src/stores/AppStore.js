@@ -13,7 +13,7 @@ export default _.extend({}, EventEmitter.prototype, {
         header: {
             title: 'React-Blog',
             desp: 'Try to build a blog with react',
-            navItems:['JavaScript','HTML','React','GoJS','ES6']
+            navItems:['Web Basic','Demos','Favorites','Others']
         },
         totalData:totalData
     },
