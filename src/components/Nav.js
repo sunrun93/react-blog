@@ -19,14 +19,22 @@ function mapTag() {
 };
 
 let NavItem = React.createClass({
-    handleClick: function (title) {
+    handleClick: function (index,title) {
         this.props.targetItem(title);
+        this.setState({
+            showIndex:index
+        })
+    },
+     getInitialState:function(){
+        return {
+            showIndex:0
+        }
     },
     render: function () {
         let detail = data.filter((item)=>{return item.tag === this.props.tagID});//filter nav item through tagID
-        const navItem = detail.map(function (item) {
+        const navItem = detail.map(function (item,index) {
             return(
-                <li key={item.title} onClick={this.handleClick.bind(this, item.title)} className={'navItem'+(this.props.active ? 'Full' : 'Hidden')}>{item.title}</li>
+                <li key={item.title} onClick={this.handleClick.bind(null,index,item.title)} className={'navItem'+(this.props.active ? 'Full' : 'Hidden')+' '+(this.state.showIndex==index?'focusNavItem':'')}>{item.title}</li>
             )
         },this);
         return (
@@ -54,7 +62,7 @@ let Nav = React.createClass({
         const tags = mapTag().map(function (item,index) {
             return (
                 <div key={item} className="navTagPane" >
-                    <span onClick={this.handleClick.bind(null,index)}>{item}</span>
+                    <span onClick={this.handleClick.bind(null,index)} className={this.state.index==index?'focusNav':'hiddenNav'}>{item}</span>
                     <NavItem targetItem={this.navToItem} tagID={item} active={this.state.index==index} key={index}/>
                 </div>
             );
