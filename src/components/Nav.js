@@ -28,6 +28,7 @@ let NavItem = React.createClass({
      getInitialState:function(){
         return {
             showIndex:0
+        
         }
     },
     render: function () {
@@ -63,7 +64,7 @@ let Nav = React.createClass({
             return (
                 <div key={item} className="navTagPane" >
                     <span onClick={this.handleClick.bind(null,index)} className={this.state.index==index?'focusNav':'hiddenNav'}>{item}</span>
-                    <NavItem targetItem={this.navToItem} tagID={item} active={this.state.index==index} key={index}/>
+                    <NavItem targetItem={this.navToItem} focusItem={this.state.index} tagID={item} active={this.state.index==index} key={index}/>
                 </div>
             );
         },this);
