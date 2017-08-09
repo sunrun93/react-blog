@@ -2,11 +2,11 @@ require('normalize.css/normalize.css');
 require('styles/App.less');
 
 import React from 'react';
-
-import Header from './Header'
-import Nav from './Nav'
-import Section from './Section'
-import Footer from './Footer'
+import Header from './Header';
+import Nav from './Nav';
+import Section from './Section';
+import Footer from './Footer';
+import RouterTest from './RouterTest';
 
 import AppStore from '../stores/AppStore'
 let jsData = require('../stores/javascript.json');
