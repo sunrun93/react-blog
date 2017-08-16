@@ -6,7 +6,6 @@ import Header from './Header';
 import Nav from './Nav';
 import Section from './Section';
 import Footer from './Footer';
-import RouterTest from './RouterTest';
 
 import AppStore from '../stores/AppStore'
 let jsData = require('../stores/javascript.json');

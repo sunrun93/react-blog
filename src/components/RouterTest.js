@@ -1,8 +1,12 @@
-import React from 'react';
-let RouterTest = React.createClass({
-    render:function(){
-        return <h2>Test Router</h2>
+require('normalize.css/normalize.css');
+require('styles/App.less');
+import React,{ Component } from 'react';
+export default class RouterTest extends Component{
+render(){
+    return(
+        <div className='test'>
+            Router-Test
+        </div>
+    )}
 
-    }
-});
-export default RouterTest;
+}

@@ -1,17 +1,18 @@
 import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import {Route,Router,hashHistory} from 'react-router';
-import {HashRouter, Route} from 'react-router-dom';
-import App from './components/Main';
+import { Router, Route, IndexRoute, Link, IndexLink,hashHistory } from 'react-router'
+import Main from './components/Main';
 import RouterTest from './components/RouterTest';
+import createBrowserHistory from 'history/createBrowserHistory';
+const history = createBrowserHistory();
 
 // Render the main component into the dom
 ReactDOM.render((
-    <HashRouter>
+    <Router history={history}>
         <div>
-            <Route path='/' component={App} />
+            <Route path='/' component={Main} />
             <Route path='/test' component={RouterTest} />
         </div>
-    </HashRouter>
-    ), document.getElementById('app'));
+    </Router>
+), document.getElementById('app'));
