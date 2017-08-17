@@ -6,13 +6,23 @@ import {render} from 'react-dom';
 import {Route} from 'react-router';
 
 let NavBar = React.createClass({
+    handleClick:function(index){
+        this.setState({
+            activeIndex:index
+        })
+    },
+    getInitialState: function () {
+        return {
+            activeIndex: 0
+        }
+    },
     render:function(){
         const data=this.props.data;
-        const navBarItems=data.map((item)=>{
+        const navBarItems=data.map(function(item,index){
             return(
-                <li className="nav_bar_item" key={item}>{item}</li>
+                <li onClick={this.handleClick.bind(null,index)} className={this.state.activeIndex==index?'active_nav_bar_item':'nav_bar_item'} key={item}>{item}</li>
             )
-        });
+        },this);
         return(
             <ul className="nav_bar">{navBarItems}</ul>
         )

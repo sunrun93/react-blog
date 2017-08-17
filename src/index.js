@@ -2,7 +2,7 @@ import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, Link, IndexLink,hashHistory } from 'react-router'
-import Main from './components/Main';
+import App from './components/Main';
 import RouterTest from './components/RouterTest';
 import createBrowserHistory from 'history/createBrowserHistory';
 const history = createBrowserHistory();
@@ -11,7 +11,7 @@ const history = createBrowserHistory();
 ReactDOM.render((
     <Router history={history}>
         <div>
-            <Route path='/' component={Main} />
+            <Route path='/' component={App} />
             <Route path='/test' component={RouterTest} />
         </div>
     </Router>
