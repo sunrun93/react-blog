@@ -23,17 +23,16 @@ let AppComponent = React.createClass({
         const data = AppStore.data;
         const headerData = data.header;
         return (
-            <div className = "index" >
-              <Header data={headerData}/>
-              <div className="mainContent">
-                  <Nav navTo={this.navToFun} />
-                  <Section targetIndex={this.state.articleTitle} />
-              </div>
-              <Footer/>
+            <div className="index" >
+                <Header data={headerData} />
+                <div className="mainContent">
+                    <Nav navTo={this.navToFun} />
+                    <Section targetIndex={this.state.articleTitle} />
+                </div>
+                <Footer/>
             </div>
         );
     }
-
 })
 
 export default AppComponent;
