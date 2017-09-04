@@ -22,10 +22,46 @@ let Content = React.createClass({
             <div className="mainContent">
                 <Nav navTo={this.navToFun} />
                 <Section targetIndex={this.state.articleTitle} />
+               
             </div>
         )
     }
 
 });
+
+let BasicContent = new React.createClass({
+    render:function(){
+        return(
+            <div>
+                <Nav navTo={this.navToFun} />
+                <Section targetIndex={this.state.articleTitle} />
+            </div>
+        )
+    }
+});
+
+let DemosContent = new React.createClass({
+    render: function () {
+        return (
+            <div className="demosPane"></div>
+        )
+    }
+});
+
+let FavoriteContent = new React.createClass({
+    render: function () {
+        return (
+            <div className="favoritePane"></div>
+        )
+    }
+});
+
+let OtherContent = new React.createClass({
+    render: function () {
+        return (
+            <div className="otherPane"></div>
+        )
+    }
+})
 
 export default Content;
