@@ -6,6 +6,7 @@ import Header from './Header';
 import Nav from './Nav';
 import Section from './Section';
 import Footer from './Footer';
+import Content from './Content';
 
 import AppStore from '../stores/AppStore'
 let jsData = require('../stores/javascript.json');
@@ -25,10 +26,7 @@ let AppComponent = React.createClass({
         return (
             <div className="index" >
                 <Header data={headerData} />
-                <div className="mainContent">
-                    <Nav navTo={this.navToFun} />
-                    <Section targetIndex={this.state.articleTitle} />
-                </div>
+                <Content/>
                 <Footer/>
             </div>
         );
